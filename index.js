@@ -220,7 +220,7 @@ console.log(artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-console.log(artists[9].name);
+console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -232,8 +232,8 @@ Example, if getArtistByIndex is invoked with the artists array and the number 0,
 
 function getArtistByIndex(array, number) {
   for(let i = 0; i < array.length; i++){
-    if(array[i] === number){
-      return array[i];
+    if(array[i].id === number){
+      return `the artist at index ${number} is ${array[i].name}`;
     }
   }
 }
@@ -249,8 +249,14 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
-  /*Your Code Here*/
+function get20s(array) {
+  // I need to create a new array to put all the filtered names.
+  const filtered = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].years > 1900 && array[i].years < 1960){
+      filtered.push(array[i]);
+    }
+  }
 }
 
 
