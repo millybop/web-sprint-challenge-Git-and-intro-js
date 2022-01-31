@@ -81,7 +81,7 @@ const artists = [
   },
   {
     "id": 8,
-    "name": "Vincent van Gogh",
+    "name": "Vincent Van Gogh",
     "years": "1853 - 1890",
     "genre": "Post-Impressionism",
     "nationality": "Dutch",
@@ -209,18 +209,17 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 
-// console.log('Task 1a', artists[0].name);
-
+console.log('Task 1a', artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-// console.log('Task 1b', artists[2].bio);
+console.log('Task 1b', artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-// console.log(artists[8].name);
+console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -231,11 +230,11 @@ Use getArtistByIndex to do the following:
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(array, number) {
-//   for(let i = 0; i < array.length; i++){
-//     if(array[i].id === number){
-//       return `the artist at index ${number} is ${array[i].name}`;
-//     }
-//   }
+  for(let i = 0; i < array.length; i++){
+    if(array[i].id === number){
+      return `the artist at index ${number} is ${array[i].name}`;
+    }
+  }
 }
 
 
@@ -251,15 +250,16 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array) {
 //   // I need to create a new array to put all the filtered names.
-//   const filtered = [];
+  const filtered = [];
 //   //The issue I see is that years is a range, and I need to compare the first year(year born) and the second year (death) for my function to work.
 //   //How to separate strings... The split menthod allows for me to separate strings, but does it turn it into an array? Can I add the numbers together?
-//   const yearArray = array[i].years.split(' ');
-//   for(let i = 0; i < array.length; i++){
-//     if(yearArray[0] > 1900 && yearArray[2] < 2000){
-//       filtered.push(array[i].name);
-//     }
-//   return filtered;
+  const yearArray = array[i].years.split(' ');
+  for(let i = 0; i < array.length; i++){
+    if(yearArray[0] > 1900 && yearArray[2] < 2000){
+      filtered.push(array[i].name);
+    }
+  return filtered;
+  }
 }
 
 // console.log(get20s(artists));
