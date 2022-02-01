@@ -249,18 +249,14 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(array) {
-  const filtered = [];
-	const names = [];
-	for(let i = 0; i < array.length; i++){
-		filtered.push(array[i].name,array[i].years.split(' '));
-	}
-	for(let i = 0; i < filtered.length; i++){
-		if(filtered[i][0] > 1899 && filtered[i][2] < 1901){
-			names.push(filtered[0]);
-		}
-	}
-	console.log(filtered[1][0]);
-	return names;
+  // let newArray = [...array.years.split(' - ')];
+  // let newerArray = [];
+  // for(let i = 0; i < array.length; i++){
+  //   if(Number(newArray[i][0]) > 1899 && Number(newArray[i][1] < 2000)){
+  //     newerArray.push(array.name);
+  //   }
+  // }
+  // return newerArray;
 }
 
 console.log('Task 4', get20s(artists));
@@ -361,13 +357,13 @@ For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 
 */
 
 function artistByCountry(array, nationality){
-//   const newArray = [];
-//   for(let i = 0; i < array.length; i++){
-//     if(array[i].nationality === nationality){
-//       newArray.push(array[i].name);
-//     }
-//   }
-//   return newArray;
+  const newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].nationality === nationality){
+      newArray.push(array[i].name);
+    }
+  }
+  return newArray;
 }
 
 
