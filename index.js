@@ -249,20 +249,21 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(array) {
-//   // I need to create a new array to put all the filtered names.
   const filtered = [];
-//   //The issue I see is that years is a range, and I need to compare the first year(year born) and the second year (death) for my function to work.
-//   //How to separate strings... The split menthod allows for me to separate strings, but does it turn it into an array? Can I add the numbers together?
-  const yearArray = array[i].years.split(' ');
-  for(let i = 0; i < array.length; i++){
-    if(yearArray[0] > 1900 && yearArray[2] < 2000){
-      filtered.push(array[i].name);
-    }
-  return filtered;
-  }
+	const names = [];
+	for(let i = 0; i < array.length; i++){
+		filtered.push(array[i].name,array[i].years.split(' '));
+	}
+	for(let i = 0; i < filtered.length; i++){
+		if(filtered[i][0] > 1899 && filtered[i][2] < 1901){
+			names.push(filtered[0]);
+		}
+	}
+	console.log(filtered[1][0]);
+	return names;
 }
 
-// console.log(get20s(artists));
+console.log('Task 4', get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -273,17 +274,17 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(array, number) {
-//   //we do not want to alter the existing array, so I should create a new array, no we need to make a copy.
-//   const cloneArray = [...array];
-//   for(let i = 0; i < cloneArray.length; i++){
-//     if(cloneArray[i].id === number){
-//       cloneArray[i].slice([i], 1)
-//     }
-//   }
-//   return cloneArray;
+function removeArtist(array, number){
+	const newArray = [];
+	array.forEach(function(array, index){
+		if(array.id !== number){
+			newArray.push(array)
+		}
+	});
+	return newArray.length;
 }
 
+console.log('Task 5', removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
