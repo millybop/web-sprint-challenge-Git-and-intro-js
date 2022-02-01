@@ -303,9 +303,11 @@ Use addArtist to do the following:
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array) {
-//   //to get the last array, we would use array.length -1
-//   //To add new items to the end, we would use array.push(). What I am not sure about is the formatting on how to push that information.
-
+  //to get the last array, we would use array.length -1
+  //To add new items to the end, we would use array.push().
+  //What I am not sure about is the formatting on how to push that information.
+  array.push({"id": 20,"name": 'Milton Ochoa',"years": '1996 - current day',"genre": 'Web Design', "nationality": 'American',"bio": 'lorem ipsum'});
+  return array;
 }
 
 
